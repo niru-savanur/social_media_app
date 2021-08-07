@@ -13,7 +13,7 @@ const path = require("path");
 
 dotenv.config();
 
-mongoose.connect("mongodb://localhost:27017/mediaDB",
+mongoose.connect(process.env.MONGO_URL,
   { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false });
 
 app.use("/images", express.static(path.join(__dirname, "public/images")));
